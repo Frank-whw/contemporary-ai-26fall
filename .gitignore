@@ -1,0 +1,29 @@
+# uv / Python env
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+# 工具缓存
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# 本地密钥
+.env
+.env.*
+
+# macOS / IDE
+.DS_Store
+.idea/
+.vscode/
+
+# 模型产物（提交作业时的 predictions.csv 可 git add -f）
+*.pkl
+*.joblib
+*.onnx
