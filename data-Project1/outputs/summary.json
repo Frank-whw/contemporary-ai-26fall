@@ -1,0 +1,589 @@
+{
+  "config": {
+    "SEED": 42,
+    "REPEAT_SEEDS": [
+      1,
+      2
+    ],
+    "SMALL_GAP": 0.01,
+    "VAL_SIZE": 0.2,
+    "VEC_HP": {
+      "lowercase": true,
+      "min_df": 2
+    },
+    "TFIDF": "TfidfTransformer(norm='l2', use_idf=True, smooth_idf=True, sublinear_tf=False)",
+    "LR_MAX_ITER": 1000,
+    "C_GRID": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "NB_ALPHAS": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "WIDTHS": [
+      100,
+      200,
+      300
+    ],
+    "MLP_HP": {
+      "activation": "relu",
+      "solver": "adam",
+      "alpha": 0.0001,
+      "batch_size": 200,
+      "learning_rate_init": 0.001,
+      "shuffle": true
+    },
+    "EPOCHS": 50,
+    "TIGHT": {
+      "LR": {
+        "max_iter": 20000,
+        "tol": 1e-08
+      },
+      "SVC": {
+        "tol": 1e-05
+      }
+    }
+  },
+  "versions": {
+    "python": "3.12.13",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.2"
+  },
+  "decisions": [
+    {
+      "exp": "Q1 representation, LR hp=1 fixed",
+      "gap_top2_seed42": 0.013106884749061742,
+      "repeated": false,
+      "repeated_models": [],
+      "best_by_mean": "LR(C=1)|tfidf|raw",
+      "chosen": "LR(C=1)|tfidf|raw",
+      "rule": "max val macro-F1 (mean over seeds if repeated)",
+      "threshold": null
+    },
+    {
+      "exp": "Q1 representation, MNB hp=1 fixed",
+      "gap_top2_seed42": 0.04182861560602624,
+      "repeated": false,
+      "repeated_models": [],
+      "best_by_mean": "MNB(alpha=1)|tfidf|raw",
+      "chosen": "MNB(alpha=1)|tfidf|raw",
+      "rule": "max val macro-F1 (mean over seeds if repeated)",
+      "threshold": null
+    },
+    {
+      "exp": "Q2 MNB alpha",
+      "gap_top2_seed42": 0.0020862429197504584,
+      "repeated": true,
+      "repeated_models": [
+        "MNB(alpha=0.1)|tfidf|raw",
+        "MNB(alpha=0.01)|tfidf|raw"
+      ],
+      "best_by_mean": "MNB(alpha=0.1)|tfidf|raw",
+      "chosen": "MNB(alpha=0.1)|tfidf|raw",
+      "rule": "max val macro-F1 (mean over seeds if repeated)",
+      "threshold": null
+    },
+    {
+      "exp": "Q2 LR C",
+      "gap_top2_seed42": 0.018705688763771766,
+      "repeated": false,
+      "repeated_models": [],
+      "best_by_mean": "LR(C=10)|tfidf|raw",
+      "chosen": "LR(C=10)|tfidf|raw",
+      "rule": "max val macro-F1 (mean over seeds if repeated)",
+      "threshold": null
+    },
+    {
+      "exp": "Q2 SVC C",
+      "gap_top2_seed42": 0.002702178243011999,
+      "repeated": true,
+      "repeated_models": [
+        "SVC-linear(C=1)|tfidf|raw",
+        "SVC-linear(C=10)|tfidf|raw"
+      ],
+      "best_by_mean": "SVC-linear(C=1)|tfidf|raw",
+      "chosen": "SVC-linear(C=1)|tfidf|raw",
+      "rule": "max val macro-F1 (mean over seeds if repeated)",
+      "threshold": null
+    },
+    {
+      "exp": "Q3 MLP width",
+      "gap_top2_seed42": 0.0008007628365467312,
+      "repeated": true,
+      "repeated_models": [
+        "MLP(h=200)|tfidf|raw",
+        "MLP(h=300)|tfidf|raw",
+        "MLP(h=100)|tfidf|raw"
+      ],
+      "best_by_mean": "MLP(h=200)|tfidf|raw",
+      "chosen": "MLP(h=100)|tfidf|raw",
+      "rule": "1-SE rule: mean >= 0.9404 - 0.0027, then fewest params",
+      "threshold": 0.9376538987440957
+    },
+    {
+      "exp": "Final model selection",
+      "gap_top2_seed42": 0.004090872073060581,
+      "repeated": true,
+      "repeated_models": [
+        "MLP(h=100)|tfidf|raw",
+        "LR(C=10)|tfidf|raw",
+        "SVC-linear(C=1)|tfidf|raw"
+      ],
+      "best_by_mean": "MLP(h=100)|tfidf|raw",
+      "chosen": "MLP(h=100)|tfidf|raw",
+      "rule": "1-SE rule: mean >= 0.9399 - 0.0024, then fewest params",
+      "threshold": 0.9374882910848857
+    },
+    {
+      "exp": "Ablation: strip e-mail header",
+      "gap_top2_seed42": 0.011327186320684524,
+      "repeated": false,
+      "repeated_models": [],
+      "best_by_mean": "MLP(h=100)|tfidf|raw",
+      "chosen": "MLP(h=100)|tfidf|raw",
+      "rule": "max val macro-F1 (mean over seeds if repeated)",
+      "threshold": null
+    }
+  ],
+  "data": {
+    "n_train_csv": 7368,
+    "n_test": 2457,
+    "n_train_fold": 5894,
+    "n_val_fold": 1474,
+    "train_fold_class_counts": [
+      584,
+      591,
+      590,
+      594,
+      597,
+      596,
+      594,
+      590,
+      594,
+      564
+    ],
+    "val_fold_class_counts": [
+      146,
+      148,
+      147,
+      148,
+      150,
+      149,
+      149,
+      148,
+      148,
+      141
+    ],
+    "dim_seed42": 38178,
+    "tokens_per_doc_train_fold": {
+      "min": 13,
+      "median": 169.0,
+      "max": 13310
+    },
+    "nnz_per_doc_train_fold": {
+      "mean": 144.61299626739057,
+      "median": 115.0
+    },
+    "density_train_fold": 0.0037878620217766923,
+    "top5_terms_train_fold": [
+      {
+        "term": "the",
+        "token_share": 0.04195341466964018,
+        "idf": 1.0700839790692862
+      },
+      {
+        "term": "ax",
+        "token_share": 0.033101903388985145,
+        "idf": 6.68612753941748
+      },
+      {
+        "term": "to",
+        "token_share": 0.021851721483058806,
+        "idf": 1.102443278375102
+      },
+      {
+        "term": "of",
+        "token_share": 0.019543848345806587,
+        "idf": 1.141731650272738
+      },
+      {
+        "term": "and",
+        "token_share": 0.01717067564525297,
+        "idf": 1.1818127803902043
+      }
+    ],
+    "idf_median": 8.072421900537371,
+    "idf_max": 8.583247524303362,
+    "largest_single_doc_counts_train_fold": [
+      {
+        "term": "ax",
+        "count_in_doc": 11151,
+        "doc_tokens": 13310,
+        "doc_class": 1,
+        "term_total_count": 53227,
+        "docs_containing_term": 19,
+        "classes_of_docs_containing_term": [
+          1,
+          14,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "term": "ax",
+        "count_in_doc": 9635,
+        "doc_tokens": 12733,
+        "doc_class": 1,
+        "term_total_count": 53227,
+        "docs_containing_term": 19,
+        "classes_of_docs_containing_term": [
+          1,
+          14,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "term": "ax",
+        "count_in_doc": 7692,
+        "doc_tokens": 10944,
+        "doc_class": 1,
+        "term_total_count": 53227,
+        "docs_containing_term": 19,
+        "classes_of_docs_containing_term": [
+          1,
+          14,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0
+        ]
+      }
+    ],
+    "count_row_l2_norm_train_fold": {
+      "min": 3.605551275463989,
+      "median": 19.32614376082084,
+      "max": 11180.844780248048
+    },
+    "class_top_terms_train_fold": {
+      "0": [
+        "graphics",
+        "image",
+        "3d",
+        "gif",
+        "images",
+        "tiff"
+      ],
+      "1": [
+        "windows",
+        "file",
+        "dos",
+        "microsoft",
+        "ms",
+        "mouse"
+      ],
+      "2": [
+        "scsi",
+        "drive",
+        "ide",
+        "card",
+        "controller",
+        "bus"
+      ],
+      "3": [
+        "car",
+        "cars",
+        "engine",
+        "ford",
+        "dealer",
+        "oil"
+      ],
+      "4": [
+        "bike",
+        "dod",
+        "ride",
+        "bikes",
+        "my",
+        "dog"
+      ],
+      "5": [
+        "he",
+        "baseball",
+        "game",
+        "team",
+        "players",
+        "games"
+      ],
+      "6": [
+        "clipper",
+        "key",
+        "encryption",
+        "the",
+        "chip",
+        "government"
+      ],
+      "7": [
+        "circuit",
+        "voltage",
+        "amp",
+        "battery",
+        "copy",
+        "power"
+      ],
+      "8": [
+        "pitt",
+        "msg",
+        "geb",
+        "gordon",
+        "banks",
+        "she"
+      ],
+      "9": [
+        "the",
+        "israel",
+        "of",
+        "israeli",
+        "jews",
+        "in"
+      ]
+    },
+    "train_fold_docs_without_blank_line": 0
+  },
+  "q1_lr_best_C_per_rep_seed42": {
+    "count": {
+      "best_C": 1.0,
+      "val_macro_f1": 0.9014481667953417
+    },
+    "tf_l2": {
+      "best_C": 10.0,
+      "val_macro_f1": 0.894572710602264
+    },
+    "tfidf": {
+      "best_C": 10.0,
+      "val_macro_f1": 0.9332607403081752
+    }
+  },
+  "optimization_check": {
+    "LR(C=10)|tfidf|raw": {
+      "tight_hp": {
+        "max_iter": 20000,
+        "tol": 1e-08
+      },
+      "val_macro_f1_default": 0.9332607403081752,
+      "val_macro_f1_tight": 0.931999859139242,
+      "n_iter_default": 53,
+      "n_iter_tight": 261,
+      "val_pred_agreement": 0.9966078697421981
+    },
+    "SVC-linear(C=1)|tfidf|raw": {
+      "tight_hp": {
+        "tol": 1e-05
+      },
+      "val_macro_f1_default": 0.9280047640998994,
+      "val_macro_f1_tight": 0.9280047640998994,
+      "n_iter_default": 1679,
+      "n_iter_tight": 2845,
+      "val_pred_agreement": 1.0
+    }
+  },
+  "mlp_width_means": [
+    {
+      "width": 100,
+      "best_epoch": 20.333333333333332,
+      "best_val_macro_f1": 0.9399124329349101,
+      "last_val_macro_f1": 0.9357610456247878,
+      "best_minus_last": 0.004151387310122286
+    },
+    {
+      "width": 200,
+      "best_epoch": 9.0,
+      "best_val_macro_f1": 0.9403580698130168,
+      "last_val_macro_f1": 0.9337984164127474,
+      "best_minus_last": 0.006559653400269465
+    },
+    {
+      "width": 300,
+      "best_epoch": 18.333333333333332,
+      "best_val_macro_f1": 0.9397488405396247,
+      "last_val_macro_f1": 0.9337726534634699,
+      "best_minus_last": 0.0059761870761547336
+    }
+  ],
+  "final_vs_others_paired": [
+    {
+      "final": "MLP(h=100)|tfidf|raw",
+      "other": "MNB(alpha=0.1)|tfidf|raw",
+      "seeds": [
+        1,
+        2,
+        42
+      ],
+      "diff_by_seed": [
+        0.015145946094811458,
+        0.010219300014533417,
+        0.012034995134739823
+      ],
+      "mean_diff": 0.012466747081361565,
+      "diff_by_seed_using_last_epoch": [
+        0.011567381443280511,
+        0.002677726448665041,
+        0.010700971421772287
+      ],
+      "mean_diff_using_last_epoch": 0.00831535977123928
+    },
+    {
+      "final": "MLP(h=100)|tfidf|raw",
+      "other": "LR(C=10)|tfidf|raw",
+      "seeds": [
+        1,
+        2,
+        42
+      ],
+      "diff_by_seed": [
+        0.010392876832120757,
+        0.010362762461050723,
+        0.004090872073060581
+      ],
+      "mean_diff": 0.008282170455410687,
+      "diff_by_seed_using_last_epoch": [
+        0.00681431218058981,
+        0.002821188895182347,
+        0.002756848360093045
+      ],
+      "mean_diff_using_last_epoch": 0.004130783145288401
+    },
+    {
+      "final": "MLP(h=100)|tfidf|raw",
+      "other": "SVC-linear(C=1)|tfidf|raw",
+      "seeds": [
+        1,
+        2,
+        42
+      ],
+      "diff_by_seed": [
+        0.0142881422888671,
+        0.020951567160366835,
+        0.009346848281336362
+      ],
+      "mean_diff": 0.014862185910190099,
+      "diff_by_seed_using_last_epoch": [
+        0.010709577637336154,
+        0.01340999359449846,
+        0.008012824568368826
+      ],
+      "mean_diff_using_last_epoch": 0.010710798600067814
+    }
+  ],
+  "derived": {
+    "q1_LR_hp1_delta_pp": {
+      "tfidf_minus_count": 1.3106884749061742,
+      "tf_l2_minus_count": -7.098819188281224,
+      "tfidf_minus_tf_l2": 8.409507663187398
+    },
+    "q1_MNB_hp1_delta_pp": {
+      "tfidf_minus_count": 9.091429317369448,
+      "tf_l2_minus_count": 4.908567756766824,
+      "tfidf_minus_tf_l2": 4.182861560602625
+    },
+    "q1_LR_bestC_tfidf_minus_count_pp": 3.181257351283351,
+    "q2_LR_val_f1_range_over_C_pp": 7.322154311864426,
+    "final_over_lr_param_ratio": 10.002645433353415,
+    "final_over_lr_fit_time_ratio_seed42": 20.18944335634173,
+    "mlp_min_train_macro_f1_at_epoch5": 0.9933944705032272,
+    "mlp_seed42_train_loss_epoch5_by_width": {
+      "100": 0.3324220716975733,
+      "200": 0.15337038503673858,
+      "300": 0.09308626367832279
+    },
+    "final_width_seed42_train_loss_epoch1_epoch50": [
+      2.1454661828225263,
+      0.004511093176685702
+    ],
+    "final_width_seed42_val_f1_range_epoch_ge6": [
+      0.9313142669298428,
+      0.9373516123812358
+    ]
+  },
+  "top_confusions_final_seed42": [
+    {
+      "true": 7,
+      "pred": 2,
+      "count": 14
+    },
+    {
+      "true": 2,
+      "pred": 1,
+      "count": 8
+    },
+    {
+      "true": 1,
+      "pred": 2,
+      "count": 7
+    },
+    {
+      "true": 0,
+      "pred": 1,
+      "count": 6
+    },
+    {
+      "true": 0,
+      "pred": 2,
+      "count": 5
+    },
+    {
+      "true": 7,
+      "pred": 3,
+      "count": 5
+    }
+  ],
+  "final": {
+    "model": "MLP(h=100)|tfidf|raw",
+    "n_fit": 7368,
+    "dim_full_train": 43277,
+    "best_epoch_by_seed": {
+      "1": 12,
+      "2": 6,
+      "42": 43
+    },
+    "epochs": 12,
+    "fit_s": 10.843615958001465,
+    "n_params": 4328810,
+    "test_rows": 2457,
+    "pred_class_counts": [
+      265,
+      243,
+      235,
+      239,
+      245,
+      253,
+      245,
+      257,
+      242,
+      233
+    ]
+  },
+  "total_runtime_s": 956.6935904999264
+}

@@ -1,0 +1,137 @@
+17:00:40 features seed=42 docs=raw: train=5894 val=1474 dim=38178
+17:00:40 data: {"n_train_csv": 7368, "n_test": 2457, "n_train_fold": 5894, "n_val_fold": 1474, "train_fold_class_counts": [584, 591, 590, 594, 597, 596, 594, 590, 594, 564], "val_fold_class_counts": [146, 148, 147, 148, 150, 149, 149, 148, 148, 141], "dim_seed42": 38178, "tokens_per_doc_train_fold": {"min": 13, "median": 169.0, "max": 13310}, "nnz_per_doc_train_fold": {"mean": 144.61299626739057, "median": 115.0}, "density_train_fold": 0.0037878620217766923, "top5_terms_train_fold": [{"term": "the", "token_share": 0.04195341466964018, "idf": 1.0700839790692862}, {"term": "ax", "token_share": 0.033101903388985145, "idf": 6.68612753941748}, {"term": "to", "token_share": 0.021851721483058806, "idf": 1.102443278375102}, {"term": "of", "token_share": 0.019543848345806587, "idf": 1.141731650272738}, {"term": "and", "token_share": 0.01717067564525297, "idf": 1.1818127803902043}], "idf_median": 8.072421900537371, "idf_max": 8.583247524303362, "largest_single_doc_counts_train_fold": [{"term": "ax", "count_in_doc": 11151, "doc_tokens": 13310, "doc_class": 1, "term_total_count": 53227, "docs_containing_term": 19, "classes_of_docs_containing_term": [1, 14, 1, 0, 0, 1, 1, 1, 0, 0]}, {"term": "ax", "count_in_doc": 9635, "doc_tokens": 12733, "doc_class": 1, "term_total_count": 53227, "docs_containing_term": 19, "classes_of_docs_containing_term": [1, 14, 1, 0, 0, 1, 1, 1, 0, 0]}, {"term": "ax", "count_in_doc": 7692, "doc_tokens": 10944, "doc_class": 1, "term_total_count": 53227, "docs_containing_term": 19, "classes_of_docs_containing_term": [1, 14, 1, 0, 0, 1, 1, 1, 0, 0]}], "count_row_l2_norm_train_fold": {"min": 3.605551275463989, "median": 19.32614376082084, "max": 11180.844780248048}, "class_top_terms_train_fold": {"0": ["graphics", "image", "3d", "gif", "images", "tiff"], "1": ["windows", "file", "dos", "microsoft", "ms", "mouse"], "2": ["scsi", "drive", "ide", "card", "controller", "bus"], "3": ["car", "cars", "engine", "ford", "dealer", "oil"], "4": ["bike", "dod", "ride", "bikes", "my", "dog"], "5": ["he", "baseball", "game", "team", "players", "games"], "6": ["clipper", "key", "encryption", "the", "chip", "government"], "7": ["circuit", "voltage", "amp", "battery", "copy", "power"], "8": ["pitt", "msg", "geb", "gordon", "banks", "she"], "9": ["the", "israel", "of", "israeli", "jews", "in"]}, "train_fold_docs_without_blank_line": 0}
+17:01:01 checkpoint check:
+                                             variant  width  epochs  epoch1_loss_diff_vs_ref  max_abs_loss_diff_vs_ref  final_train_loss  val_macro_f1  val_acc
+       fit(max_iter=10, random_state=42) [reference]    100      10                 0.000000                  0.000000          0.057776      0.934011 0.933514
+                partial_fit + RandomState(42) [used]    100      10                 0.000000                  0.002994          0.058306      0.933293 0.932836
+                 partial_fit + random_state=42 (int)    100      10                 0.000000                  0.004220          0.057856      0.932741 0.932157
+                   warm_start=True + fit(max_iter=1)    100      10                 0.000000                  0.127804          0.046075      0.935146 0.934871
+fit(max_iter=10, random_state=43) [seed-noise scale]    100      10                 0.010182                  0.030618          0.060721      0.932243 0.931479
+17:01:03 run LR(C=1)|count|raw                seed=42 default | train F1 1.0000 | val F1 0.9014 acc 0.9009 | params 381790 | 2.7s
+17:01:05 run LR(C=1)|tf_l2|raw                seed=42 default | train F1 0.9238 | val F1 0.8305 acc 0.8304 | params 381790 | 1.3s
+17:01:05 run LR(C=1)|tfidf|raw                seed=42 default | train F1 0.9856 | val F1 0.9146 acc 0.9138 | params 381790 | 0.9s
+17:01:06 compare [Q1 representation, LR hp=1 fixed]
+            model seeds  n_seeds  val_macro_f1_seed42  val_macro_f1_mean  val_macro_f1_std  val_acc_mean val_macro_f1_by_seed  n_params  chosen
+LR(C=1)|count|raw    42        1             0.901448           0.901448               NaN      0.900950               0.9014    381790   False
+LR(C=1)|tf_l2|raw    42        1             0.830460           0.830460               NaN      0.830393               0.8305    381790   False
+LR(C=1)|tfidf|raw    42        1             0.914555           0.914555               NaN      0.913840               0.9146    381790    True
+-> {"exp": "Q1 representation, LR hp=1 fixed", "gap_top2_seed42": 0.013106884749061742, "repeated": false, "repeated_models": [], "best_by_mean": "LR(C=1)|tfidf|raw", "chosen": "LR(C=1)|tfidf|raw", "rule": "max val macro-F1 (mean over seeds if repeated)", "threshold": null}
+17:01:06 run MNB(alpha=1)|count|raw           seed=42 default | train F1 0.8698 | val F1 0.8116 acc 0.8419 | params 381790 | 0.0s
+17:01:06 run MNB(alpha=1)|tf_l2|raw           seed=42 default | train F1 0.9367 | val F1 0.8607 acc 0.8616 | params 381790 | 0.0s
+17:01:06 run MNB(alpha=1)|tfidf|raw           seed=42 default | train F1 0.9726 | val F1 0.9025 acc 0.9023 | params 381790 | 0.0s
+17:01:06 compare [Q1 representation, MNB hp=1 fixed]
+                 model seeds  n_seeds  val_macro_f1_seed42  val_macro_f1_mean  val_macro_f1_std  val_acc_mean val_macro_f1_by_seed  n_params  chosen
+MNB(alpha=1)|count|raw    42        1             0.811623           0.811623               NaN      0.841927               0.8116    381790   False
+MNB(alpha=1)|tf_l2|raw    42        1             0.860709           0.860709               NaN      0.861601               0.8607    381790   False
+MNB(alpha=1)|tfidf|raw    42        1             0.902537           0.902537               NaN      0.902307               0.9025    381790    True
+-> {"exp": "Q1 representation, MNB hp=1 fixed", "gap_top2_seed42": 0.04182861560602624, "repeated": false, "repeated_models": [], "best_by_mean": "MNB(alpha=1)|tfidf|raw", "chosen": "MNB(alpha=1)|tfidf|raw", "rule": "max val macro-F1 (mean over seeds if repeated)", "threshold": null}
+17:01:09 run LR(C=0.1)|count|raw              seed=42 default | train F1 0.9992 | val F1 0.8932 acc 0.8928 | params 381790 | 3.7s
+17:01:12 run LR(C=10)|count|raw               seed=42 default | train F1 1.0000 | val F1 0.8999 acc 0.8996 | params 381790 | 2.6s
+17:01:12 run LR(C=0.1)|tf_l2|raw              seed=42 default | train F1 0.6915 | val F1 0.6389 acc 0.6452 | params 381790 | 0.4s
+17:01:15 run LR(C=10)|tf_l2|raw               seed=42 default | train F1 0.9976 | val F1 0.8946 acc 0.8942 | params 381790 | 2.6s
+17:01:15 run LR(C=0.1)|tfidf|raw              seed=42 default | train F1 0.9277 | val F1 0.8600 acc 0.8582 | params 381790 | 0.3s
+17:01:16 run LR(C=10)|tfidf|raw               seed=42 default | train F1 0.9993 | val F1 0.9333 acc 0.9328 | params 381790 | 1.0s
+17:01:16 Q1 robustness (LR best C per representation, seed 42): {'count': {'best_C': 1.0, 'val_macro_f1': 0.9014481667953417}, 'tf_l2': {'best_C': 10.0, 'val_macro_f1': 0.894572710602264}, 'tfidf': {'best_C': 10.0, 'val_macro_f1': 0.9332607403081752}}
+17:01:16 run MNB(alpha=0.01)|tfidf|raw        seed=42 default | train F1 0.9964 | val F1 0.9232 acc 0.9227 | params 381790 | 0.0s
+17:01:16 run MNB(alpha=0.1)|tfidf|raw         seed=42 default | train F1 0.9919 | val F1 0.9253 acc 0.9247 | params 381790 | 0.0s
+17:01:17 features seed=1 docs=raw: train=5894 val=1474 dim=36346
+17:01:17 run MNB(alpha=0.01)|tfidf|raw        seed=1 default | train F1 0.9970 | val F1 0.9163 acc 0.9159 | params 363470 | 0.0s
+17:01:17 features seed=2 docs=raw: train=5894 val=1474 dim=37690
+17:01:17 run MNB(alpha=0.01)|tfidf|raw        seed=2 default | train F1 0.9966 | val F1 0.9340 acc 0.9335 | params 376910 | 0.0s
+17:01:17 run MNB(alpha=0.1)|tfidf|raw         seed=1 default | train F1 0.9917 | val F1 0.9225 acc 0.9220 | params 363470 | 0.0s
+17:01:17 run MNB(alpha=0.1)|tfidf|raw         seed=2 default | train F1 0.9915 | val F1 0.9345 acc 0.9342 | params 376910 | 0.0s
+17:01:17 compare [Q2 MNB alpha]
+                    model  seeds  n_seeds  val_macro_f1_seed42  val_macro_f1_mean  val_macro_f1_std  val_acc_mean val_macro_f1_by_seed  n_params  chosen
+MNB(alpha=0.01)|tfidf|raw 42 1 2        3             0.923230           0.924510          0.008896      0.924016 0.9232 0.9163 0.9340    381790   False
+ MNB(alpha=0.1)|tfidf|raw 42 1 2        3             0.925317           0.927446          0.006304      0.926956 0.9253 0.9225 0.9345    381790    True
+   MNB(alpha=1)|tfidf|raw     42        1             0.902537           0.902537               NaN      0.902307               0.9025    381790   False
+-> {"exp": "Q2 MNB alpha", "gap_top2_seed42": 0.0020862429197504584, "repeated": true, "repeated_models": ["MNB(alpha=0.1)|tfidf|raw", "MNB(alpha=0.01)|tfidf|raw"], "best_by_mean": "MNB(alpha=0.1)|tfidf|raw", "chosen": "MNB(alpha=0.1)|tfidf|raw", "rule": "max val macro-F1 (mean over seeds if repeated)", "threshold": null}
+17:01:17 compare [Q2 LR C]
+              model seeds  n_seeds  val_macro_f1_seed42  val_macro_f1_mean  val_macro_f1_std  val_acc_mean val_macro_f1_by_seed  n_params  chosen
+LR(C=0.1)|tfidf|raw    42        1             0.860039           0.860039               NaN      0.858209               0.8600    381790   False
+  LR(C=1)|tfidf|raw    42        1             0.914555           0.914555               NaN      0.913840               0.9146    381790   False
+ LR(C=10)|tfidf|raw    42        1             0.933261           0.933261               NaN      0.932836               0.9333    381790    True
+-> {"exp": "Q2 LR C", "gap_top2_seed42": 0.018705688763771766, "repeated": false, "repeated_models": [], "best_by_mean": "LR(C=10)|tfidf|raw", "chosen": "LR(C=10)|tfidf|raw", "rule": "max val macro-F1 (mean over seeds if repeated)", "threshold": null}
+17:02:12 run SVC-linear(C=0.1)|tfidf|raw      seed=42 default | train F1 0.8641 | val F1 0.8083 acc 0.7931 | params 1718055 | 31.1s
+17:02:51 run SVC-linear(C=1)|tfidf|raw        seed=42 default | train F1 0.9954 | val F1 0.9280 acc 0.9274 | params 1718055 | 21.3s
+17:03:32 run SVC-linear(C=10)|tfidf|raw       seed=42 default | train F1 0.9998 | val F1 0.9253 acc 0.9247 | params 1718055 | 23.5s
+17:04:10 run SVC-linear(C=1)|tfidf|raw        seed=1 default | train F1 0.9954 | val F1 0.9233 acc 0.9227 | params 1635615 | 21.0s
+17:04:49 run SVC-linear(C=1)|tfidf|raw        seed=2 default | train F1 0.9951 | val F1 0.9238 acc 0.9233 | params 1696095 | 21.6s
+17:05:29 run SVC-linear(C=10)|tfidf|raw       seed=1 default | train F1 0.9997 | val F1 0.9204 acc 0.9199 | params 1635615 | 22.8s
+17:06:10 run SVC-linear(C=10)|tfidf|raw       seed=2 default | train F1 0.9997 | val F1 0.9285 acc 0.9281 | params 1696095 | 23.5s
+17:06:10 compare [Q2 SVC C]
+                      model  seeds  n_seeds  val_macro_f1_seed42  val_macro_f1_mean  val_macro_f1_std  val_acc_mean val_macro_f1_by_seed  n_params  chosen
+SVC-linear(C=0.1)|tfidf|raw     42        1             0.808274           0.808274               NaN      0.793080               0.8083   1718055   False
+  SVC-linear(C=1)|tfidf|raw 42 1 2        3             0.928005           0.925050          0.002569      0.924469 0.9280 0.9233 0.9238   1718055    True
+ SVC-linear(C=10)|tfidf|raw 42 1 2        3             0.925303           0.924761          0.004083      0.924242 0.9253 0.9204 0.9285   1718055   False
+-> {"exp": "Q2 SVC C", "gap_top2_seed42": 0.002702178243011999, "repeated": true, "repeated_models": ["SVC-linear(C=1)|tfidf|raw", "SVC-linear(C=10)|tfidf|raw"], "best_by_mean": "SVC-linear(C=1)|tfidf|raw", "chosen": "SVC-linear(C=1)|tfidf|raw", "rule": "max val macro-F1 (mean over seeds if repeated)", "threshold": null}
+17:06:15 run LR(C=10)|tfidf|raw               seed=42 tight   | train F1 0.9998 | val F1 0.9320 acc 0.9315 | params 381790 | 5.1s
+17:06:15 optimization check LR(C=10)|tfidf|raw: {'tight_hp': {'max_iter': 20000, 'tol': 1e-08}, 'val_macro_f1_default': 0.9332607403081752, 'val_macro_f1_tight': 0.931999859139242, 'n_iter_default': 53, 'n_iter_tight': 261, 'val_pred_agreement': 0.9966078697421981}
+17:06:54 run SVC-linear(C=1)|tfidf|raw        seed=42 tight   | train F1 0.9954 | val F1 0.9280 acc 0.9274 | params 1718055 | 21.4s
+17:06:54 optimization check SVC-linear(C=1)|tfidf|raw: {'tight_hp': {'tol': 1e-05}, 'val_macro_f1_default': 0.9280047640998994, 'val_macro_f1_tight': 0.9280047640998994, 'n_iter_default': 1679, 'n_iter_tight': 2845, 'val_pred_agreement': 1.0}
+17:07:16 run MLP(h=100)|tfidf|raw             seed=42 default | train F1 0.9998 | val F1 0.9374 acc 0.9369 | params 3818910 | 20.0s | best_epoch 43 last-epoch val F1 0.9360
+17:08:06 run MLP(h=200)|tfidf|raw             seed=42 default | train F1 0.9998 | val F1 0.9396 acc 0.9389 | params 7637810 | 46.3s | best_epoch 18 last-epoch val F1 0.9361
+17:09:27 run MLP(h=300)|tfidf|raw             seed=42 default | train F1 1.0000 | val F1 0.9388 acc 0.9383 | params 11456710 | 75.4s | best_epoch 46 last-epoch val F1 0.9366
+17:10:00 run MLP(h=100)|tfidf|raw             seed=1 default | train F1 0.9993 | val F1 0.9376 acc 0.9369 | params 3635710 | 30.9s | best_epoch 12 last-epoch val F1 0.9340
+17:10:34 run MLP(h=100)|tfidf|raw             seed=2 default | train F1 0.9961 | val F1 0.9448 acc 0.9444 | params 3770110 | 32.1s | best_epoch 6 last-epoch val F1 0.9372
+17:11:36 run MLP(h=200)|tfidf|raw             seed=1 default | train F1 0.9941 | val F1 0.9361 acc 0.9355 | params 7271410 | 57.2s | best_epoch 4 last-epoch val F1 0.9275
+17:12:40 run MLP(h=200)|tfidf|raw             seed=2 default | train F1 0.9981 | val F1 0.9454 acc 0.9450 | params 7540210 | 59.2s | best_epoch 5 last-epoch val F1 0.9378
+17:14:10 run MLP(h=300)|tfidf|raw             seed=1 default | train F1 0.9988 | val F1 0.9371 acc 0.9362 | params 10907110 | 83.4s | best_epoch 5 last-epoch val F1 0.9275
+17:15:43 run MLP(h=300)|tfidf|raw             seed=2 default | train F1 0.9966 | val F1 0.9433 acc 0.9430 | params 11310310 | 85.9s | best_epoch 4 last-epoch val F1 0.9372
+17:15:43 compare [Q3 MLP width]
+               model  seeds  n_seeds  val_macro_f1_seed42  val_macro_f1_mean  val_macro_f1_std  val_acc_mean val_macro_f1_by_seed  n_params  chosen
+MLP(h=100)|tfidf|raw 42 1 2        3             0.937352           0.939912          0.004199      0.939394 0.9374 0.9376 0.9448   3818910    True
+MLP(h=200)|tfidf|raw 42 1 2        3             0.939603           0.940358          0.004684      0.939846 0.9396 0.9361 0.9454   7637810   False
+MLP(h=300)|tfidf|raw 42 1 2        3             0.938802           0.939749          0.003207      0.939168 0.9388 0.9371 0.9433  11456710   False
+-> {"exp": "Q3 MLP width", "gap_top2_seed42": 0.0008007628365467312, "repeated": true, "repeated_models": ["MLP(h=200)|tfidf|raw", "MLP(h=300)|tfidf|raw", "MLP(h=100)|tfidf|raw"], "best_by_mean": "MLP(h=200)|tfidf|raw", "chosen": "MLP(h=100)|tfidf|raw", "rule": "1-SE rule: mean >= 0.9404 - 0.0027, then fewest params", "threshold": 0.9376538987440957}
+17:15:43 MLP best vs last epoch:
+ width  seed  best_epoch  best_val_macro_f1  last_val_macro_f1  train_macro_f1  train_loss_at_best  last_train_loss  min_val_logloss_epoch  min_val_logloss  last_val_logloss  n_params  best_minus_last  val_logloss_rise_after_min
+   100     1          12           0.937628           0.934049        0.999323            0.039680         0.004770                     49         0.225032          0.225149   3635710         0.003579                    0.000117
+   100     2           6           0.944758           0.937217        0.996103            0.211478         0.004503                     50         0.194879          0.194879   3770110         0.007542                    0.000000
+   100    42          43           0.937352           0.936018        0.999831            0.005266         0.004511                     49         0.217635          0.217753   3818910         0.001334                    0.000118
+   200     1           4           0.936098           0.927475        0.994073            0.271504         0.003998                     30         0.225310          0.228621   7271410         0.008623                    0.003311
+   200     2           5           0.945374           0.937818        0.998135            0.150443         0.003810                     50         0.191446          0.191446   7540210         0.007555                    0.000000
+   200    42          18           0.939603           0.936102        0.999831            0.009014         0.003846                     50         0.215274          0.215274   7637810         0.003501                    0.000000
+   300     1           5           0.937122           0.927498        0.998815            0.095265         0.003568                     31         0.225838          0.234316  10907110         0.009624                    0.008479
+   300     2           4           0.943323           0.937193        0.996611            0.174025         0.003495                     45         0.190839          0.191108  11310310         0.006130                    0.000269
+   300    42          46           0.938802           0.936627        1.000000            0.003781         0.003560                     49         0.213098          0.213200  11456710         0.002175                    0.000102
+means:
+       best_epoch  best_val_macro_f1  last_val_macro_f1  best_minus_last
+width                                                                   
+100     20.333333           0.939912           0.935761         0.004151
+200      9.000000           0.940358           0.933798         0.006560
+300     18.333333           0.939749           0.933773         0.005976
+17:15:45 run LR(C=10)|tfidf|raw               seed=1 default | train F1 0.9993 | val F1 0.9272 acc 0.9267 | params 363470 | 1.4s
+17:15:46 run LR(C=10)|tfidf|raw               seed=2 default | train F1 0.9998 | val F1 0.9344 acc 0.9342 | params 376910 | 1.7s
+17:15:46 compare [Final model selection]
+                    model  seeds  n_seeds  val_macro_f1_seed42  val_macro_f1_mean  val_macro_f1_std  val_acc_mean val_macro_f1_by_seed  n_params  chosen
+ MNB(alpha=0.1)|tfidf|raw     42        1             0.925317           0.925317               NaN      0.924695               0.9253    381790   False
+       LR(C=10)|tfidf|raw 42 1 2        3             0.933261           0.931630          0.003849      0.931253 0.9333 0.9272 0.9344    381790   False
+SVC-linear(C=1)|tfidf|raw 42 1 2        3             0.928005           0.925050          0.002569      0.924469 0.9280 0.9233 0.9238   1718055   False
+     MLP(h=100)|tfidf|raw 42 1 2        3             0.937352           0.939912          0.004199      0.939394 0.9374 0.9376 0.9448   3818910    True
+-> {"exp": "Final model selection", "gap_top2_seed42": 0.004090872073060581, "repeated": true, "repeated_models": ["MLP(h=100)|tfidf|raw", "LR(C=10)|tfidf|raw", "SVC-linear(C=1)|tfidf|raw"], "best_by_mean": "MLP(h=100)|tfidf|raw", "chosen": "MLP(h=100)|tfidf|raw", "rule": "1-SE rule: mean >= 0.9399 - 0.0024, then fewest params", "threshold": 0.9374882910848857}
+17:15:46 paired differences: [{"final": "MLP(h=100)|tfidf|raw", "other": "MNB(alpha=0.1)|tfidf|raw", "seeds": [1, 2, 42], "diff_by_seed": [0.015145946094811458, 0.010219300014533417, 0.012034995134739823], "mean_diff": 0.012466747081361565, "diff_by_seed_using_last_epoch": [0.011567381443280511, 0.002677726448665041, 0.010700971421772287], "mean_diff_using_last_epoch": 0.00831535977123928}, {"final": "MLP(h=100)|tfidf|raw", "other": "LR(C=10)|tfidf|raw", "seeds": [1, 2, 42], "diff_by_seed": [0.010392876832120757, 0.010362762461050723, 0.004090872073060581], "mean_diff": 0.008282170455410687, "diff_by_seed_using_last_epoch": [0.00681431218058981, 0.002821188895182347, 0.002756848360093045], "mean_diff_using_last_epoch": 0.004130783145288401}, {"final": "MLP(h=100)|tfidf|raw", "other": "SVC-linear(C=1)|tfidf|raw", "seeds": [1, 2, 42], "diff_by_seed": [0.0142881422888671, 0.020951567160366835, 0.009346848281336362], "mean_diff": 0.014862185910190099, "diff_by_seed_using_last_epoch": [0.010709577637336154, 0.01340999359449846, 0.008012824568368826], "mean_diff_using_last_epoch": 0.010710798600067814}]
+17:15:46 derived numbers: {"q1_LR_hp1_delta_pp": {"tfidf_minus_count": 1.3106884749061742, "tf_l2_minus_count": -7.098819188281224, "tfidf_minus_tf_l2": 8.409507663187398}, "q1_MNB_hp1_delta_pp": {"tfidf_minus_count": 9.091429317369448, "tf_l2_minus_count": 4.908567756766824, "tfidf_minus_tf_l2": 4.182861560602625}, "q1_LR_bestC_tfidf_minus_count_pp": 3.181257351283351, "q2_LR_val_f1_range_over_C_pp": 7.322154311864426, "final_over_lr_param_ratio": 10.002645433353415, "final_over_lr_fit_time_ratio_seed42": 20.18944335634173, "mlp_min_train_macro_f1_at_epoch5": 0.9933944705032272, "mlp_seed42_train_loss_epoch5_by_width": {"100": 0.3324220716975733, "200": 0.15337038503673858, "300": 0.09308626367832279}, "final_width_seed42_train_loss_epoch1_epoch50": [2.1454661828225263, 0.004511093176685702], "final_width_seed42_val_f1_range_epoch_ge6": [0.9313142669298428, 0.9373516123812358]}
+17:15:46 per-class (seed 42 val):
+ class  support  MNB(alpha=0.1)_f1  MNB(alpha=0.1)_recall  LR(C=10)_f1  LR(C=10)_recall  SVC-linear(C=1)_f1  SVC-linear(C=1)_recall  MLP(h=100)_f1  MLP(h=100)_recall
+     0      146           0.893471               0.890411     0.895623         0.910959            0.895425                0.938356       0.907850           0.910959
+     1      148           0.875862               0.858108     0.909091         0.912162            0.890365                0.905405       0.899676           0.939189
+     2      147           0.839506               0.925170     0.835526         0.863946            0.858086                0.884354       0.844156           0.884354
+     3      148           0.920530               0.939189     0.952703         0.952703            0.935593                0.932432       0.946667           0.959459
+     4      150           0.963455               0.966667     0.976431         0.966667            0.969492                0.953333       0.986486           0.973333
+     5      149           0.976271               0.966443     0.976898         0.993289            0.969900                0.973154       0.986486           0.979866
+     6      149           0.945205               0.926174     0.944828         0.919463            0.944056                0.906040       0.962199           0.939597
+     7      148           0.872727               0.810811     0.875862         0.858108            0.868966                0.851351       0.870504           0.817568
+     8      148           0.969697               0.972973     0.972789         0.966216            0.966216                0.966216       0.969492           0.966216
+     9      141           0.996441               0.992908     0.992857         0.985816            0.981949                0.964539       1.000000           1.000000
+17:15:46 top confusions (true, pred, count): [(7, 2, 14), (2, 1, 8), (1, 2, 7), (0, 1, 6), (0, 2, 5), (7, 3, 5)]
+17:15:51 features seed=42 docs=nohdr: train=5894 val=1474 dim=36251
+17:16:24 run MLP(h=100)|tfidf|nohdr           seed=42 default | train F1 0.9978 | val F1 0.9260 acc 0.9254 | params 3626210 | 31.1s | best_epoch 18 last-epoch val F1 0.9239
+17:16:24 compare [Ablation: strip e-mail header]
+                 model seeds  n_seeds  val_macro_f1_seed42  val_macro_f1_mean  val_macro_f1_std  val_acc_mean val_macro_f1_by_seed  n_params  chosen
+  MLP(h=100)|tfidf|raw    42        1             0.937352           0.937352               NaN      0.936906               0.9374   3818910    True
+MLP(h=100)|tfidf|nohdr    42        1             0.926024           0.926024               NaN      0.925373               0.9260   3626210   False
+-> {"exp": "Ablation: strip e-mail header", "gap_top2_seed42": 0.011327186320684524, "repeated": false, "repeated_models": [], "best_by_mean": "MLP(h=100)|tfidf|raw", "chosen": "MLP(h=100)|tfidf|raw", "rule": "max val macro-F1 (mean over seeds if repeated)", "threshold": null}
+17:16:24 ablation is post-hoc only; final model stays MLP(h=100)|tfidf|raw
+17:16:36 final fit: {'model': 'MLP(h=100)|tfidf|raw', 'n_fit': 7368, 'dim_full_train': 43277, 'best_epoch_by_seed': {1: 12, 2: 6, 42: 43}, 'epochs': 12, 'fit_s': 10.843615958001465, 'n_params': 4328810, 'test_rows': 2457, 'pred_class_counts': [265, 243, 235, 239, 245, 253, 245, 257, 242, 233]}
+17:16:36 done in 956.7s
