@@ -1,0 +1,8 @@
+algorithm,order,value,nodes,leaves,cutoffs,pruned,cache_hits
+minimax,original,5,15,8,0,0,0
+alphabeta,original,5,14,7,1,1,0
+alphabeta,reversed,5,14,7,1,1,0
+alphabeta,ascending,5,13,6,2,2,0
+alphabeta,descending,5,15,8,0,0,0
+alphabeta,best,5,11,5,2,2,0
+alphabeta,worst,5,15,8,0,0,0

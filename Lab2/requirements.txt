@@ -1,0 +1,2 @@
+# 算法代码只用标准库；matplotlib 只用于 bench/plot.py 出图
+matplotlib>=3.8

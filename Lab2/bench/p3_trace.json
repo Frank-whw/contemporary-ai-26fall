@@ -1,0 +1,670 @@
+{
+  "original": [
+    {
+      "node": "R.0.0.0",
+      "type": "leaf",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 3,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0.1",
+      "type": "leaf",
+      "alpha": 3,
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.1.0",
+      "type": "leaf",
+      "alpha": "-inf",
+      "beta": 5,
+      "value": 6,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.1",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": 5,
+      "value": 6,
+      "pruned": 1
+    },
+    {
+      "node": "R.0",
+      "type": "MIN",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.0.0",
+      "type": "leaf",
+      "alpha": 5,
+      "beta": "inf",
+      "value": 6,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.0.1",
+      "type": "leaf",
+      "alpha": 6,
+      "beta": "inf",
+      "value": 9,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.0",
+      "type": "MAX",
+      "alpha": 5,
+      "beta": "inf",
+      "value": 9,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1.0",
+      "type": "leaf",
+      "alpha": 5,
+      "beta": 9,
+      "value": 1,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1.1",
+      "type": "leaf",
+      "alpha": 5,
+      "beta": 9,
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1",
+      "type": "MAX",
+      "alpha": 5,
+      "beta": 9,
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.1",
+      "type": "MIN",
+      "alpha": 5,
+      "beta": "inf",
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    }
+  ],
+  "reversed": [
+    {
+      "node": "R.1.1.1",
+      "type": "leaf",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1.0",
+      "type": "leaf",
+      "alpha": 2,
+      "beta": "inf",
+      "value": 1,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.0.1",
+      "type": "leaf",
+      "alpha": "-inf",
+      "beta": 2,
+      "value": 9,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.0",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": 2,
+      "value": 9,
+      "pruned": 1
+    },
+    {
+      "node": "R.1",
+      "type": "MIN",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.1.1",
+      "type": "leaf",
+      "alpha": 2,
+      "beta": "inf",
+      "value": 9,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.1.0",
+      "type": "leaf",
+      "alpha": 9,
+      "beta": "inf",
+      "value": 6,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.1",
+      "type": "MAX",
+      "alpha": 2,
+      "beta": "inf",
+      "value": 9,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0.1",
+      "type": "leaf",
+      "alpha": 2,
+      "beta": 9,
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0.0",
+      "type": "leaf",
+      "alpha": 5,
+      "beta": 9,
+      "value": 3,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0",
+      "type": "MAX",
+      "alpha": 2,
+      "beta": 9,
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.0",
+      "type": "MIN",
+      "alpha": 2,
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    }
+  ],
+  "ascending": [
+    {
+      "node": "R.1.1.0",
+      "type": "leaf",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 1,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1.1",
+      "type": "leaf",
+      "alpha": 1,
+      "beta": "inf",
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.0.0",
+      "type": "leaf",
+      "alpha": "-inf",
+      "beta": 2,
+      "value": 6,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.0",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": 2,
+      "value": 6,
+      "pruned": 1
+    },
+    {
+      "node": "R.1",
+      "type": "MIN",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0.0",
+      "type": "leaf",
+      "alpha": 2,
+      "beta": "inf",
+      "value": 3,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0.1",
+      "type": "leaf",
+      "alpha": 3,
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0",
+      "type": "MAX",
+      "alpha": 2,
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.1.0",
+      "type": "leaf",
+      "alpha": 2,
+      "beta": 5,
+      "value": 6,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.1",
+      "type": "MAX",
+      "alpha": 2,
+      "beta": 5,
+      "value": 6,
+      "pruned": 1
+    },
+    {
+      "node": "R.0",
+      "type": "MIN",
+      "alpha": 2,
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    }
+  ],
+  "descending": [
+    {
+      "node": "R.0.1.1",
+      "type": "leaf",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 9,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.1.0",
+      "type": "leaf",
+      "alpha": 9,
+      "beta": "inf",
+      "value": 6,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.1",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 9,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0.1",
+      "type": "leaf",
+      "alpha": "-inf",
+      "beta": 9,
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0.0",
+      "type": "leaf",
+      "alpha": 5,
+      "beta": 9,
+      "value": 3,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": 9,
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.0",
+      "type": "MIN",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.0.1",
+      "type": "leaf",
+      "alpha": 5,
+      "beta": "inf",
+      "value": 9,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.0.0",
+      "type": "leaf",
+      "alpha": 9,
+      "beta": "inf",
+      "value": 6,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.0",
+      "type": "MAX",
+      "alpha": 5,
+      "beta": "inf",
+      "value": 9,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1.1",
+      "type": "leaf",
+      "alpha": 5,
+      "beta": 9,
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1.0",
+      "type": "leaf",
+      "alpha": 5,
+      "beta": 9,
+      "value": 1,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1",
+      "type": "MAX",
+      "alpha": 5,
+      "beta": 9,
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.1",
+      "type": "MIN",
+      "alpha": 5,
+      "beta": "inf",
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    }
+  ],
+  "best": [
+    {
+      "node": "R.0.0.1",
+      "type": "leaf",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0.0",
+      "type": "leaf",
+      "alpha": 5,
+      "beta": "inf",
+      "value": 3,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.1.1",
+      "type": "leaf",
+      "alpha": "-inf",
+      "beta": 5,
+      "value": 9,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.1",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": 5,
+      "value": 9,
+      "pruned": 1
+    },
+    {
+      "node": "R.0",
+      "type": "MIN",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1.1",
+      "type": "leaf",
+      "alpha": 5,
+      "beta": "inf",
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1.0",
+      "type": "leaf",
+      "alpha": 5,
+      "beta": "inf",
+      "value": 1,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1",
+      "type": "MAX",
+      "alpha": 5,
+      "beta": "inf",
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.1",
+      "type": "MIN",
+      "alpha": 5,
+      "beta": "inf",
+      "value": 2,
+      "pruned": 1
+    },
+    {
+      "node": "R",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    }
+  ],
+  "worst": [
+    {
+      "node": "R.1.0.0",
+      "type": "leaf",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 6,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.0.1",
+      "type": "leaf",
+      "alpha": 6,
+      "beta": "inf",
+      "value": 9,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.0",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 9,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1.0",
+      "type": "leaf",
+      "alpha": "-inf",
+      "beta": 9,
+      "value": 1,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1.1",
+      "type": "leaf",
+      "alpha": 1,
+      "beta": 9,
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.1.1",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": 9,
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.1",
+      "type": "MIN",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 2,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.1.0",
+      "type": "leaf",
+      "alpha": 2,
+      "beta": "inf",
+      "value": 6,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.1.1",
+      "type": "leaf",
+      "alpha": 6,
+      "beta": "inf",
+      "value": 9,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.1",
+      "type": "MAX",
+      "alpha": 2,
+      "beta": "inf",
+      "value": 9,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0.0",
+      "type": "leaf",
+      "alpha": 2,
+      "beta": 9,
+      "value": 3,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0.1",
+      "type": "leaf",
+      "alpha": 3,
+      "beta": 9,
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.0.0",
+      "type": "MAX",
+      "alpha": 2,
+      "beta": 9,
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R.0",
+      "type": "MIN",
+      "alpha": 2,
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    },
+    {
+      "node": "R",
+      "type": "MAX",
+      "alpha": "-inf",
+      "beta": "inf",
+      "value": 5,
+      "pruned": 0
+    }
+  ]
+}

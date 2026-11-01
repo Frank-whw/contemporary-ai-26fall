@@ -1,0 +1,538 @@
+{
+  "1": {
+    "pv": [
+      {
+        "player": "A",
+        "from": "A",
+        "target": "T2",
+        "distance": 4,
+        "gain": 2,
+        "utility": 2
+      }
+    ],
+    "first_moves": [
+      {
+        "target": "T1",
+        "gain": -1,
+        "value": -1,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T1",
+            "distance": 10,
+            "gain": -1,
+            "utility": -1
+          }
+        ]
+      },
+      {
+        "target": "T2",
+        "gain": 2,
+        "value": 2,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T2",
+            "distance": 4,
+            "gain": 2,
+            "utility": 2
+          }
+        ]
+      },
+      {
+        "target": "T3",
+        "gain": -1,
+        "value": -1,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T3",
+            "distance": 8,
+            "gain": -1,
+            "utility": -1
+          }
+        ]
+      },
+      {
+        "target": "T4",
+        "gain": -1,
+        "value": -1,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T4",
+            "distance": 8,
+            "gain": -1,
+            "utility": -1
+          }
+        ]
+      }
+    ]
+  },
+  "2": {
+    "pv": [
+      {
+        "player": "A",
+        "from": "A",
+        "target": "T2",
+        "distance": 4,
+        "gain": 2,
+        "utility": 2
+      },
+      {
+        "player": "B",
+        "from": "B",
+        "target": "T3",
+        "distance": 4,
+        "gain": 3,
+        "utility": -1
+      }
+    ],
+    "first_moves": [
+      {
+        "target": "T1",
+        "gain": -1,
+        "value": -4,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T1",
+            "distance": 10,
+            "gain": -1,
+            "utility": -1
+          },
+          {
+            "player": "B",
+            "from": "B",
+            "target": "T3",
+            "distance": 4,
+            "gain": 3,
+            "utility": -4
+          }
+        ]
+      },
+      {
+        "target": "T2",
+        "gain": 2,
+        "value": -1,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T2",
+            "distance": 4,
+            "gain": 2,
+            "utility": 2
+          },
+          {
+            "player": "B",
+            "from": "B",
+            "target": "T3",
+            "distance": 4,
+            "gain": 3,
+            "utility": -1
+          }
+        ]
+      },
+      {
+        "target": "T3",
+        "gain": -1,
+        "value": -2,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T3",
+            "distance": 8,
+            "gain": -1,
+            "utility": -1
+          },
+          {
+            "player": "B",
+            "from": "B",
+            "target": "T1",
+            "distance": 8,
+            "gain": 1,
+            "utility": -2
+          }
+        ]
+      },
+      {
+        "target": "T4",
+        "gain": -1,
+        "value": -4,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T4",
+            "distance": 8,
+            "gain": -1,
+            "utility": -1
+          },
+          {
+            "player": "B",
+            "from": "B",
+            "target": "T3",
+            "distance": 4,
+            "gain": 3,
+            "utility": -4
+          }
+        ]
+      }
+    ]
+  },
+  "3": {
+    "pv": [
+      {
+        "player": "A",
+        "from": "A",
+        "target": "T2",
+        "distance": 4,
+        "gain": 2,
+        "utility": 2
+      },
+      {
+        "player": "B",
+        "from": "B",
+        "target": "T1",
+        "distance": 8,
+        "gain": 1,
+        "utility": 1
+      },
+      {
+        "player": "A",
+        "from": "T2",
+        "target": "T3",
+        "distance": 6,
+        "gain": 1,
+        "utility": 2
+      }
+    ],
+    "first_moves": [
+      {
+        "target": "T1",
+        "gain": -1,
+        "value": -4,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T1",
+            "distance": 10,
+            "gain": -1,
+            "utility": -1
+          },
+          {
+            "player": "B",
+            "from": "B",
+            "target": "T3",
+            "distance": 4,
+            "gain": 3,
+            "utility": -4
+          },
+          {
+            "player": "A",
+            "from": "T1",
+            "target": "T2",
+            "distance": 6,
+            "gain": 0,
+            "utility": -4
+          }
+        ]
+      },
+      {
+        "target": "T2",
+        "gain": 2,
+        "value": 2,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T2",
+            "distance": 4,
+            "gain": 2,
+            "utility": 2
+          },
+          {
+            "player": "B",
+            "from": "B",
+            "target": "T1",
+            "distance": 8,
+            "gain": 1,
+            "utility": 1
+          },
+          {
+            "player": "A",
+            "from": "T2",
+            "target": "T3",
+            "distance": 6,
+            "gain": 1,
+            "utility": 2
+          }
+        ]
+      },
+      {
+        "target": "T3",
+        "gain": -1,
+        "value": -1,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T3",
+            "distance": 8,
+            "gain": -1,
+            "utility": -1
+          },
+          {
+            "player": "B",
+            "from": "B",
+            "target": "T1",
+            "distance": 8,
+            "gain": 1,
+            "utility": -2
+          },
+          {
+            "player": "A",
+            "from": "T3",
+            "target": "T4",
+            "distance": 6,
+            "gain": 1,
+            "utility": -1
+          }
+        ]
+      },
+      {
+        "target": "T4",
+        "gain": -1,
+        "value": -4,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T4",
+            "distance": 8,
+            "gain": -1,
+            "utility": -1
+          },
+          {
+            "player": "B",
+            "from": "B",
+            "target": "T3",
+            "distance": 4,
+            "gain": 3,
+            "utility": -4
+          },
+          {
+            "player": "A",
+            "from": "T4",
+            "target": "T2",
+            "distance": 6,
+            "gain": 0,
+            "utility": -4
+          }
+        ]
+      }
+    ]
+  },
+  "4": {
+    "pv": [
+      {
+        "player": "A",
+        "from": "A",
+        "target": "T3",
+        "distance": 8,
+        "gain": -1,
+        "utility": -1
+      },
+      {
+        "player": "B",
+        "from": "B",
+        "target": "T1",
+        "distance": 8,
+        "gain": 1,
+        "utility": -2
+      },
+      {
+        "player": "A",
+        "from": "T3",
+        "target": "T2",
+        "distance": 6,
+        "gain": 0,
+        "utility": -2
+      },
+      {
+        "player": "B",
+        "from": "T1",
+        "target": "T4",
+        "distance": 12,
+        "gain": -5,
+        "utility": 3
+      }
+    ],
+    "first_moves": [
+      {
+        "target": "T1",
+        "gain": -1,
+        "value": -5,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T1",
+            "distance": 10,
+            "gain": -1,
+            "utility": -1
+          },
+          {
+            "player": "B",
+            "from": "B",
+            "target": "T3",
+            "distance": 4,
+            "gain": 3,
+            "utility": -4
+          },
+          {
+            "player": "A",
+            "from": "T1",
+            "target": "T2",
+            "distance": 6,
+            "gain": 0,
+            "utility": -4
+          },
+          {
+            "player": "B",
+            "from": "T3",
+            "target": "T4",
+            "distance": 6,
+            "gain": 1,
+            "utility": -5
+          }
+        ]
+      },
+      {
+        "target": "T2",
+        "gain": 2,
+        "value": 1,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T2",
+            "distance": 4,
+            "gain": 2,
+            "utility": 2
+          },
+          {
+            "player": "B",
+            "from": "B",
+            "target": "T3",
+            "distance": 4,
+            "gain": 3,
+            "utility": -1
+          },
+          {
+            "player": "A",
+            "from": "T2",
+            "target": "T1",
+            "distance": 6,
+            "gain": 3,
+            "utility": 2
+          },
+          {
+            "player": "B",
+            "from": "T3",
+            "target": "T4",
+            "distance": 6,
+            "gain": 1,
+            "utility": 1
+          }
+        ]
+      },
+      {
+        "target": "T3",
+        "gain": -1,
+        "value": 3,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T3",
+            "distance": 8,
+            "gain": -1,
+            "utility": -1
+          },
+          {
+            "player": "B",
+            "from": "B",
+            "target": "T1",
+            "distance": 8,
+            "gain": 1,
+            "utility": -2
+          },
+          {
+            "player": "A",
+            "from": "T3",
+            "target": "T2",
+            "distance": 6,
+            "gain": 0,
+            "utility": -2
+          },
+          {
+            "player": "B",
+            "from": "T1",
+            "target": "T4",
+            "distance": 12,
+            "gain": -5,
+            "utility": 3
+          }
+        ]
+      },
+      {
+        "target": "T4",
+        "gain": -1,
+        "value": -7,
+        "reply": [
+          {
+            "player": "A",
+            "from": "A",
+            "target": "T4",
+            "distance": 8,
+            "gain": -1,
+            "utility": -1
+          },
+          {
+            "player": "B",
+            "from": "B",
+            "target": "T3",
+            "distance": 4,
+            "gain": 3,
+            "utility": -4
+          },
+          {
+            "player": "A",
+            "from": "T4",
+            "target": "T1",
+            "distance": 12,
+            "gain": -3,
+            "utility": -7
+          },
+          {
+            "player": "B",
+            "from": "T3",
+            "target": "T2",
+            "distance": 6,
+            "gain": 0,
+            "utility": -7
+          }
+        ]
+      }
+    ]
+  }
+}

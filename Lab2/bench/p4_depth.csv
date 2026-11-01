@@ -1,0 +1,33 @@
+H,algorithm,order,best_target,best_value,pv,time_us_median,nodes,leaves,cutoffs,pruned,cache_hits
+1,minimax,natural,T2,2,T2,3.37,5,4,0,0,0
+1,minimax_memo,natural,T2,2,T2,3.67,5,4,0,0,0
+1,alphabeta,natural,T2,2,T2,3.71,5,4,0,0,0
+1,alphabeta,reversed,T2,2,T2,3.77,5,4,0,0,0
+1,alphabeta,greedy,T2,2,T2,3.92,5,4,0,0,0
+1,alphabeta,anti_greedy,T2,2,T2,3.92,5,4,0,0,0
+1,alphabeta,best,T2,2,T2,4.75,5,4,0,0,0
+1,alphabeta,worst,T2,2,T2,4.75,5,4,0,0,0
+2,minimax,natural,T2,-1,T2 T3,10.71,17,12,0,0,0
+2,minimax_memo,natural,T2,-1,T2,11.79,17,12,0,0,0
+2,alphabeta,natural,T2,-1,T2 T3,11.37,13,8,2,4,0
+2,alphabeta,reversed,T2,-1,T2 T3,12.17,16,11,1,1,0
+2,alphabeta,greedy,T2,-1,T2 T3,11.88,11,6,3,6,0
+2,alphabeta,anti_greedy,T2,-1,T2 T3,12.83,16,11,1,1,0
+2,alphabeta,best,T2,-1,T2 T3,22.71,11,6,3,6,0
+2,alphabeta,worst,T2,-1,T2 T3,23.83,17,12,0,0,0
+3,minimax,natural,T2,2,T2 T1 T3,25.46,41,24,0,0,0
+3,minimax_memo,natural,T2,2,T2,28.63,41,24,0,0,0
+3,alphabeta,natural,T2,2,T2 T1 T3,22.42,26,13,5,7,0
+3,alphabeta,reversed,T2,2,T2 T3 T1,27.83,35,19,4,4,0
+3,alphabeta,greedy,T2,2,T2 T3 T1,20.92,21,10,5,8,0
+3,alphabeta,anti_greedy,T2,2,T2 T1 T3,30.08,38,22,1,1,0
+3,alphabeta,best,T2,2,T2 T1 T3,50.04,21,10,5,8,0
+3,alphabeta,worst,T2,2,T2 T1 T3,62.75,41,24,0,0,0
+4,minimax,natural,T3,3,T3 T1 T2 T4,40.08,65,24,0,0,0
+4,minimax_memo,natural,T3,3,T3,45.58,53,12,0,0,12
+4,alphabeta,natural,T3,3,T3 T1 T2 T4,37.5,47,16,5,6,0
+4,alphabeta,reversed,T3,3,T3 T2 T1 T4,37.29,46,16,4,5,0
+4,alphabeta,greedy,T3,3,T3 T1 T2 T4,34.33,37,12,6,8,0
+4,alphabeta,anti_greedy,T3,3,T3 T2 T1 T4,44.04,53,19,2,3,0
+4,alphabeta,best,T3,3,T3 T1 T2 T4,77.9,31,10,5,8,0
+4,alphabeta,worst,T3,3,T3 T1 T2 T4,104.67,65,24,0,0,0
